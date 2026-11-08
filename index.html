@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Vaishali ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Pacifico&family=Quicksand:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Sacramento&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg,#ffe0ec,#e9dcff,#fff1e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #633c58;
+    font-family: 'Quicksand',sans-serif;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    bottom: -40px;
+    animation: floatUp linear forwards;
+    opacity: .7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: .8; }
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 750px;
+    height: min(620px, 90vh);
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(15px);
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(130,70,110,.18);
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,.5);
+    z-index: 10;
+}
+
+#bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg,#e45e9c,#a66bd6);
+    transition: width .5s;
+}
+
+/* Individual scrollable slides */
+.slide {
+    position: absolute;
+    inset: 6px 0 90px;
+    padding: 30px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #d77cab rgba(255,255,255,.35);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(60px) scale(.96);
+    transition: opacity .65s ease,
+                transform .65s ease,
+                visibility .65s;
+}
+
+.slide::-webkit-scrollbar {
+    width: 7px;
+}
+
+.slide::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.4);
+    border-radius: 20px;
+}
+
+.slide::-webkit-scrollbar-thumb {
+    background: linear-gradient(#e88bb7,#a879d0);
+    border-radius: 20px;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    z-index: 2;
+}
+
+.slide h1 {
+    font-size: clamp(27px,5vw,42px);
+    margin-bottom: 20px;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+.slide p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 580px;
+    flex-shrink: 0;
+}
+
+.emoji {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: heartbeat 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.14); }
+}
+
+/* Different slide fonts and backgrounds */
+
+.slide:nth-child(2) {
+    font-family: 'Great Vibes',cursive;
+    background: linear-gradient(135deg,#ffe0ec,#fff0f5,#eadfff);
+}
+
+.slide:nth-child(2) h1 {
+    font-size: clamp(40px,7vw,62px);
+    color: #c04d83;
+}
+
+.slide:nth-child(2) p {
+    font-family: 'Quicksand',sans-serif;
+}
+
+.slide:nth-child(3) {
+    font-family: 'Dancing Script',cursive;
+    background: linear-gradient(135deg,#fff0f5,#ffe3ec);
+}
+
+.slide:nth-child(4) {
+    font-family: 'Playfair Display',serif;
+    background: linear-gradient(135deg,#e9dcff,#fff0fa);
+}
+
+.slide:nth-child(5) {
+    font-family: 'Pacifico',cursive;
+    background: linear-gradient(135deg,#fff0e6,#ffe1eb);
+}
+
+.slide:nth-child(6) {
+    font-family: 'Cormorant Garamond',serif;
+    background: linear-gradient(135deg,#fce4ec,#e6dcff);
+}
+
+.slide:nth-child(7) {
+    font-family: 'Sacramento',cursive;
+    background: linear-gradient(135deg,#fff2d9,#ffe4ed);
+}
+
+.slide:nth-child(8) {
+    font-family: 'Dancing Script',cursive;
+    background: linear-gradient(135deg,#e4f4f0,#fce4ed);
+}
+
+.slide:nth-child(9) {
+    font-family: 'Playfair Display',serif;
+    background: linear-gradient(135deg,#e7e0ff,#ffe4ee);
+}
+
+/* Final letter */
+.slide:nth-child(10) {
+    font-family: 'Quicksand',sans-serif;
+    background: linear-gradient(135deg,#ffe0e9,#f1dcff,#fff0e0);
+    justify-content: flex-start;
+    padding: 35px 35px 30px;
+}
+
+.slide:nth-child(10) .emoji {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.slide:nth-child(10) h1 {
+    font-family: 'Great Vibes',cursive;
+    font-size: clamp(32px,6vw,46px);
+    color: #bd5185;
+    margin-bottom: 20px;
+}
+
+.slide:nth-child(10) p {
+    font-family: 'Cormorant Garamond',serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.65;
+    max-width: 590px;
+    margin-bottom: 15px;
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    z-index: 10;
+}
+
+button {
+    border: none;
+    padding: 13px 27px;
+    border-radius: 50px;
+    background: linear-gradient(135deg,#d95c98,#a66bd6);
+    color: white;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(180,80,140,.25);
+    transition: all .3s ease;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 10px 25px rgba(180,80,140,.4);
+}
+
+button:active {
+    transform: scale(.92);
+}
+
+#prev {
+    background: #b69acb;
+}
+
+#counter {
+    font-size: 14px;
+    font-weight: bold;
+    color: #99547b;
+}
+
+@media(max-width:600px) {
+    .container {
+        width: 94%;
+        height: 90vh;
+    }
+
+    .slide {
+        padding: 25px 20px;
+        inset: 6px 0 85px;
+    }
+
+    .slide p {
+        font-size: 16px;
+    }
+
+    .slide:nth-child(10) {
+        padding: 25px 20px;
+    }
+
+    .slide:nth-child(10) p {
+        font-size: 19px;
+    }
+
+    .controls {
+        gap: 9px;
+        bottom: 16px;
+    }
+
+    button {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div class="container">
+
+<div class="progress">
+    <div id="bar"></div>
+</div>
+
+<!-- OPENING SLIDE -->
+<section class="slide active">
+    <div class="emoji">🎂🎀</div>
+    <h1>Wishing You the Very Happiest Birthday Ever, Vaishali Rawat! ❤️</h1>
+    <p>A day as beautiful and special as you are! 🌷✨</p>
+    <p style="margin-top:20px;">
+        A little collection of wishes, memories and happiness, just for you. 💗
+    </p>
+</section>
+
+<!-- 1 -->
+<section class="slide">
+    <div class="emoji">🎂❤️</div>
+    <h1>A Special Day for a Truly Special Soul</h1>
+    <p>
+        Wishing you a day filled with happiness, laughter and countless beautiful moments.
+        You truly deserve all the good things life has to offer.
+        Keep shining and smiling always! 🌷
+    </p>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+    <div class="emoji">🌷✨</div>
+    <h1>Happy Birthday to My Favourite Senior</h1>
+    <p>
+        You are one of those people who make memories worth remembering.
+        I'm genuinely glad that I got the opportunity to know you and share some beautiful moments with you.
+        Stay blessed! 🫶🏻
+    </p>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+    <div class="emoji">🦋💗</div>
+    <h1>Celebrating Someone Who Made Beautiful Memories</h1>
+    <p>
+        Some moments become special simply because of the people we share them with.
+        Thank you for being a part of some wonderful memories.
+        May your life always be filled with joy! 💫
+    </p>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+    <div class="emoji">🫶🏻🌸</div>
+    <h1>A Beautiful Soul Deserves a Beautiful Day</h1>
+    <p>
+        May this birthday bring you endless happiness, new opportunities and everything your heart wishes for.
+        Never stop being the wonderful person you are.
+        Stay happy and blessed! ❤️
+    </p>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+    <div class="emoji">💫❤️</div>
+    <h1>To Someone Who Will Always Be a Part of My Memories</h1>
+    <p>
+        Time may pass, and school days may become memories,
+        but some people always hold a special place in our memories.
+        You're definitely one of them.
+        Wishing you the happiest birthday! 🦋
+    </p>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+    <div class="emoji">🧿🌷</div>
+    <h1>Another Year of Your Beautiful Existence</h1>
+    <p>
+        May this new chapter of your life bring you success, peace and countless reasons to smile.
+        Keep growing, keep achieving and never lose your beautiful spirit.
+        Happy Birthday! 🎀
+    </p>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+    <div class="emoji">🦢🤍</div>
+    <h1>A Senior by Class, A Friend by Heart</h1>
+    <p>
+        The best thing about some connections is that they go beyond classes, years and seniority.
+        I'm grateful for all the good memories we've shared.
+        Wishing you a wonderful birthday! 🫶🏻
+    </p>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+    <div class="emoji">✨🫶🏻</div>
+    <h1>Some People Are Special, and You're One of Them</h1>
+    <p>
+        Not everyone we meet becomes a memorable part of our journey,
+        but some people leave behind beautiful memories without even realising it.
+        You're one of those people.
+        Stay blessed and keep smiling! ❤️
+    </p>
+</section>
+
+<!-- FINAL SPECIAL LETTER -->
+<section class="slide">
+
+    <div class="emoji">💌🌷</div>
+
+    <h1>Happiest Birthday to One of My Favourite Seniors! 🎂❤️</h1>
+
+    <p>
+        Honestly, I'm really glad that I got the chance to know you.
+        The memories we've made and the little moments we've shared will always be special to me.
+    </p>
+
+    <p>
+        You're not just a senior I know, but someone I genuinely respect and feel lucky to have met.
+    </p>
+
+    <p>
+        I hope you always get reasons to smile, people who value you, and opportunities that take you closer to your dreams.
+    </p>
+
+    <p style="font-family:'Dancing Script',cursive;font-size:30px;color:#c04d83;">
+        Stay happy, stay blessed and keep shining! ❤️
+    </p>
+
+    <p style="font-size:25px;">
+        With lots of good wishes! 🦋🎀
+    </p>
+
+</section>
+
+<div class="controls">
+    <button id="prev" onclick="changeSlide(-1)">← Previous</button>
+    <span id="counter">1 / 10</span>
+    <button id="next" onclick="changeSlide(1)">Next ✨</button>
+</div>
+
+</div>
+
+<script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+const bar = document.getElementById('bar');
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+
+function showSlide(index) {
+
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+        slide.scrollTop = 0;
+    });
+
+    slides[index].classList.add('active');
+
+    currentSlide = index;
+
+    counter.textContent = `${index + 1} / ${slides.length}`;
+
+    bar.style.width =
+        `${((index + 1) / slides.length) * 100}%`;
+
+    prevBtn.style.visibility =
+        index === 0 ? 'hidden' : 'visible';
+
+    nextBtn.textContent =
+        index === slides.length - 1
+        ? 'Replay ❤️'
+        : 'Next ✨';
+}
+
+function changeSlide(direction) {
+
+    let nextIndex = currentSlide + direction;
+
+    if (nextIndex >= slides.length) {
+        nextIndex = 0;
+    }
+
+    if (nextIndex < 0) {
+        nextIndex = 0;
+    }
+
+    showSlide(nextIndex);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight') changeSlide(1);
+    if (event.key === 'ArrowLeft') changeSlide(-1);
+});
+
+// Floating decorations
+const decorations = [
+    '❤️','💗','🌸','✨','🦋','🌷','💕','🎀'
+];
+
+const particleArea = document.getElementById('particles');
+
+function createParticle() {
+
+    const particle = document.createElement('span');
+
+    particle.className = 'particle';
+
+    particle.textContent =
+        decorations[Math.floor(Math.random() * decorations.length)];
+
+    particle.style.left = Math.random() * 100 + 'vw';
+
+    particle.style.fontSize =
+        (15 + Math.random() * 22) + 'px';
+
+    particle.style.animationDuration =
+        (6 + Math.random() * 8) + 's';
+
+    particleArea.appendChild(particle);
+
+    setTimeout(() => particle.remove(),15000);
+}
+
+setInterval(createParticle,450);
+
+showSlide(0);
+
+</script>
+
+</body>
+</html>
